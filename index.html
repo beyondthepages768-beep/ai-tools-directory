@@ -4,293 +4,162 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="OmniVerse Tools - Free online tools for text, images, calculations, developers and productivity.">
-<title>OmniVerse Tools - Free Online Tools</title>
+<title>AI Tools Directory</title>
 <style>
-:root {
-  --bg:#090d18;
-  --card:#111827;
-  --border:#263247;
-  --text:#f4f7ff;
-  --muted:#9ba9bf;
-  --accent:#8067ff;
+* {box-sizing:border-box}
+body {
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#0b1020;
+  color:white;
 }
-*{box-sizing:border-box}
-body{
-  margin:0;background:var(--bg);color:var(--text);
-  font-family:Arial,sans-serif;line-height:1.6;
+header {
+  padding:22px 7%;
+  border-bottom:1px solid #252c40;
+  font-size:22px;
+  font-weight:bold;
 }
-header{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:18px 7%;border-bottom:1px solid var(--border);
-  position:sticky;top:0;background:#090d18ed;z-index:10;
+header span {color:#8b7cff}
+.hero {
+  text-align:center;
+  padding:75px 20px 45px;
 }
-.logo{font-size:22px;font-weight:800}
-.logo span{color:#a18cff}
-nav a{color:var(--muted);text-decoration:none;margin-left:20px;font-size:14px}
-nav a:hover{color:white}
-.hero{text-align:center;padding:75px 20px 45px}
-.tag{
-  color:#b5a6ff;background:#211a40;padding:7px 14px;
-  border-radius:30px;font-size:12px;
+.hero h1 {font-size:42px;margin-bottom:12px}
+.hero p {color:#a7b0c5}
+.search {
+  width:min(600px,90%);
+  padding:16px;
+  margin-top:20px;
+  border:1px solid #343b55;
+  border-radius:10px;
+  background:#171e32;
+  color:white;
+  font-size:16px;
 }
-h1{font-size:clamp(36px,7vw,60px);line-height:1.15;margin:25px 0 15px}
-h1 span{color:#a18cff}
-.hero p{color:var(--muted);max-width:580px;margin:auto}
-.search{
-  display:flex;max-width:600px;margin:30px auto 15px;
-  background:var(--card);border:1px solid var(--border);
-  border-radius:12px;padding:6px;
+.categories {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  padding:20px;
 }
-.search input{
-  flex:1;min-width:0;background:none;border:0;outline:none;
-  color:white;padding:12px;font-size:15px;
+.categories button {
+  background:#1b2340;
+  color:white;
+  border:1px solid #343b55;
+  padding:10px 18px;
+  border-radius:20px;
+  cursor:pointer;
 }
-.search button,.primary{
-  border:0;background:var(--accent);color:white;
-  padding:12px 20px;border-radius:8px;cursor:pointer;
+.categories button:hover {background:#6655d9}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
+  padding:25px 7% 60px;
 }
-.stats{color:var(--muted);font-size:13px;margin-top:15px}
-main{max-width:1150px;margin:auto;padding:20px}
-.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-h2{font-size:25px}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0 25px}
-.filter{
-  padding:8px 14px;border-radius:25px;border:1px solid var(--border);
-  background:var(--card);color:var(--muted);cursor:pointer;
+.card {
+  background:#151d32;
+  border:1px solid #29324b;
+  padding:22px;
+  border-radius:14px;
 }
-.filter.active,.filter:hover{background:#29204f;color:white;border-color:var(--accent)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
-.tool{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:14px;padding:22px;transition:.2s;
+.card h3 {margin:10px 0}
+.card p {color:#a7b0c5;line-height:1.5}
+.card a {
+  display:inline-block;
+  margin-top:12px;
+  color:#a99cff;
+  text-decoration:none;
+  font-weight:bold;
 }
-.tool:hover{transform:translateY(-4px);border-color:var(--accent)}
-.tool-icon{font-size:28px}
-.tool h3{margin:12px 0 5px;font-size:18px}
-.tool p{color:var(--muted);font-size:13px;min-height:40px}
-.tool button{background:#25203e;color:#c6baff;border:0;padding:9px 14px;border-radius:7px;cursor:pointer}
-.tool button:hover{background:var(--accent);color:white}
-.tool small{display:block;color:#8c9bb2;margin-top:12px}
-.empty{display:none;color:var(--muted);text-align:center;padding:35px}
-.about{margin:65px 0;padding:30px;background:var(--card);border:1px solid var(--border);border-radius:16px}
-.about p{color:var(--muted)}
-footer{text-align:center;border-top:1px solid var(--border);padding:30px;color:var(--muted);font-size:13px}
-footer a{color:#b5a6ff;text-decoration:none;margin:0 8px}
-.modal{
-  display:none;position:fixed;inset:0;background:#000b;
-  z-index:20;align-items:center;justify-content:center;padding:15px;
-}
-.modal.show{display:flex}
-.modal-box{
-  background:#111827;border:1px solid var(--border);
-  width:100%;max-width:550px;max-height:85vh;overflow:auto;
-  padding:25px;border-radius:16px;
-}
-.modal-top{display:flex;justify-content:space-between;align-items:center}
-.close{background:none;color:white;border:0;font-size:25px;cursor:pointer}
-.modal-box textarea,.modal-box input{
-  width:100%;padding:12px;margin:10px 0;
-  background:#090d18;border:1px solid var(--border);
-  color:white;border-radius:8px;font:14px Arial;
-}
-.modal-box textarea{min-height:130px;resize:vertical}
-.modal-box label{display:block;color:var(--muted);font-size:13px}
-.modal-box button.action{
-  background:var(--accent);color:white;border:0;
-  border-radius:8px;padding:11px 16px;margin:5px 5px 5px 0;cursor:pointer;
-}
-.result{color:#c3b6ff;white-space:pre-wrap;overflow-wrap:anywhere;margin-top:15px}
-@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){
-  header{padding:15px 5%}nav a{margin-left:10px;font-size:12px}
-  .grid{grid-template-columns:1fr}
-  .hero{padding-top:55px}
-  main{padding:16px}
+footer {
+  text-align:center;
+  padding:25px;
+  color:#8992a8;
+  border-top:1px solid #252c40;
 }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">OmniVerse <span>Tools.</span></div>
-  <nav>
-    <a href="#tools">Tools</a>
-    <a href="#about">About</a>
-  </nav>
-</header>
+<header>AI <span>Tools Directory</span></header>
 
 <section class="hero">
-  <span class="tag">✦ YOUR FREE ONLINE TOOLKIT</span>
-  <h1>Everything you need.<br><span>One place.</span></h1>
-  <p>Discover simple, powerful and free online tools to make your everyday work easier.</p>
-  <div class="search">
-    <input id="search" placeholder="Search for a tool..." oninput="renderTools()">
-    <button onclick="renderTools()">Search</button>
-  </div>
-  <div class="stats">Free tools · No downloads · Mobile friendly</div>
+<h1>Discover the Best AI Tools</h1>
+<p>Explore powerful AI tools to work smarter and create more.</p>
+<input class="search" id="search"
+placeholder="Search AI tools..."
+oninput="filterTools()">
 </section>
 
-<main id="tools">
-  <div class="section-head">
-    <h2>Explore Our Tools</h2>
-    <span style="color:#9ba9bf;font-size:13px" id="count"></span>
-  </div>
-  <div class="filters" id="filters"></div>
-  <div class="grid" id="grid"></div>
-  <div class="empty" id="empty">No tools found. Try another search.</div>
-
-  <section class="about" id="about">
-    <h2>About OmniVerse Tools</h2>
-    <p>OmniVerse Tools is a collection of free online utilities designed to help students, creators, developers and everyday internet users. Our goal is to make useful digital tools accessible to everyone.</p>
-  </section>
-</main>
-
-<footer>
-  <strong>OmniVerse Tools</strong>
-  <p>Free tools for everyone.</p>
-  <a href="#tools">Tools</a>
-  <a href="#about">About</a>
-  <p>© 2026 OmniVerse Tools. All rights reserved.</p>
-</footer>
-
-<div class="modal" id="modal" onclick="if(event.target===this)closeTool()">
-  <div class="modal-box">
-    <div class="modal-top">
-      <h2 id="modalTitle">Tool</h2>
-      <button class="close" onclick="closeTool()">×</button>
-    </div>
-    <div id="toolContent"></div>
-  </div>
+<div class="categories">
+<button onclick="filterCategory('All')">All</button>
+<button onclick="filterCategory('Chat')">Chat AI</button>
+<button onclick="filterCategory('Image')">Image AI</button>
+<button onclick="filterCategory('Video')">Video AI</button>
+<button onclick="filterCategory('Productivity')">Productivity</button>
 </div>
 
+<main class="grid" id="tools">
+
+<div class="card" data-category="Chat">
+<h3>ChatGPT</h3>
+<p>AI assistant for writing, learning and brainstorming.</p>
+<a href="https://chatgpt.com/" target="_blank">Visit Website →</a>
+</div>
+
+<div class="card" data-category="Chat">
+<h3>Claude</h3>
+<p>AI assistant for writing, analysis and coding.</p>
+<a href="https://claude.ai/" target="_blank">Visit Website →</a>
+</div>
+
+<div class="card" data-category="Chat">
+<h3>Gemini</h3>
+<p>Google's AI assistant for everyday tasks.</p>
+<a href="https://gemini.google.com/" target="_blank">Visit Website →</a>
+</div>
+
+<div class="card" data-category="Image">
+<h3>Leonardo AI</h3>
+<p>Create images and artwork using AI.</p>
+<a href="https://leonardo.ai/" target="_blank">Visit Website →</a>
+</div>
+
+<div class="card" data-category="Video">
+<h3>Runway</h3>
+<p>Explore AI-powered video creation tools.</p>
+<a href="https://runwayml.com/" target="_blank">Visit Website →</a>
+</div>
+
+<div class="card" data-category="Productivity">
+<h3>Notion AI</h3>
+<p>AI features for notes and productivity.</p>
+<a href="https://www.notion.com/" target="_blank">Visit Website →</a>
+</div>
+
+</main>
+
+<footer>© 2026 AI Tools Directory</footer>
+
 <script>
-const tools = [
- {name:"Word Counter",icon:"📝",cat:"Text",desc:"Count words, characters and sentences.",id:"words"},
- {name:"Case Converter",icon:"🔠",cat:"Text",desc:"Convert text into different letter cases.",id:"case"},
- {name:"Remove Extra Spaces",icon:"✨",cat:"Text",desc:"Clean unnecessary spaces from text.",id:"spaces"},
- {name:"JSON Formatter",icon:"{ }",cat:"Developer",desc:"Format and validate JSON data.",id:"json"},
- {name:"Base64 Encoder",icon:"🔐",cat:"Developer",desc:"Encode and decode Base64 text.",id:"base64"},
- {name:"URL Encoder",icon:"🔗",cat:"Developer",desc:"Encode and decode URL text.",id:"url"},
- {name:"Percentage Calculator",icon:"🧮",cat:"Calculator",desc:"Calculate percentages easily.",id:"percent"},
- {name:"Age Calculator",icon:"🎂",cat:"Calculator",desc:"Calculate your age from your birth date.",id:"age"},
- {name:"Text Reverser",icon:"↔️",cat:"Text",desc:"Reverse any text instantly.",id:"reverse"}
-];
+let category = "All";
 
-let active="All";
-const categories=["All","Text","Developer","Calculator"];
-
-function renderTools(){
- const query=document.getElementById("search").value.toLowerCase();
- const list=tools.filter(t=>(active==="All"||t.cat===active)&&
- (t.name+" "+t.desc+" "+t.cat).toLowerCase().includes(query));
- document.getElementById("grid").innerHTML=list.map(t=>`
- <article class="tool">
- <div class="tool-icon">${t.icon}</div>
- <h3>${t.name}</h3>
- <p>${t.desc}</p>
- <button onclick="openTool('${t.id}')">Open Tool →</button>
- <small>${t.cat} · Free</small>
- </article>`).join("");
- document.getElementById("count").textContent=list.length+" tools";
- document.getElementById("empty").style.display=list.length?"none":"block";
+function filterTools() {
+  const search = document.getElementById("search").value.toLowerCase();
+  document.querySelectorAll(".card").forEach(card => {
+    const matchesSearch = card.innerText.toLowerCase().includes(search);
+    const matchesCategory = category === "All" || card.dataset.category === category;
+    card.style.display = matchesSearch && matchesCategory ? "" : "none";
+  });
 }
 
-function renderFilters(){
- document.getElementById("filters").innerHTML=categories.map(c=>
- `<button class="filter ${active===c?"active":""}" onclick="setCategory('${c}')">${c}</button>`
- ).join("");
+function filterCategory(value) {
+  category = value;
+  filterTools();
 }
-function setCategory(c){active=c;renderFilters();renderTools()}
-function openTool(id){
- const t=tools.find(x=>x.id===id);
- document.getElementById("modalTitle").textContent=t.name;
- const content=document.getElementById("toolContent");
- content.innerHTML="";
- const area=(placeholder)=>`<textarea id="input" placeholder="${placeholder}"></textarea>`;
- const button=(label,fn)=>`<button class="action" onclick="${fn}">${label}</button>`;
- let html="";
- if(id==="words"){
- html=area("Enter or paste your text...")+`<div class="result" id="result">Words: 0 | Characters: 0 | Sentences: 0</div>`;
- }else if(id==="case"){
- html=area("Enter your text...")+button("UPPERCASE","transform('upper')")+button("lowercase","transform('lower')")+button("Title Case","transform('title')")+button("Sentence case","transform('sentence')");
- }else if(id==="spaces"){
- html=area("Enter text with extra spaces...")+button("Remove Extra Spaces","transform('spaces')");
- }else if(id==="json"){
- html=area('Paste JSON here...')+button("Format JSON","transform('json')")+button("Minify JSON","transform('minify')");
- }else if(id==="base64"){
- html=area("Enter text...")+button("Encode","transform('encode')")+button("Decode","transform('decode')");
- }else if(id==="url"){
- html=area("Enter text or URL...")+button("Encode URL","transform('urlencode')")+button("Decode URL","transform('urldecode')");
- }else if(id==="percent"){
- html=`<label>What is the percentage?</label><input id="a" type="number" placeholder="e.g. 20"><label>Of what number?</label><input id="b" type="number" placeholder="e.g. 150">`+button("Calculate","calculate('percent')");
- }else if(id==="age"){
- html=`<label>Your date of birth</label><input id="a" type="date">`+button("Calculate Age","calculate('age')");
- }else if(id==="reverse"){
- html=area("Enter text...")+button("Reverse Text","transform('reverse')");
- }
- if(id==="words") document.getElementById("toolContent").innerHTML=html;
- else content.innerHTML=html+'<div class="result" id="result"></div>';
- document.getElementById("modal").classList.add("show");
- if(id==="words"){
- document.getElementById("input").addEventListener("input",()=>{
- const v=document.getElementById("input").value;
- const words=v.trim()?v.trim().split(/\s+/).length:0;
- const sentences=v.trim()?(v.match(/[.!?]+/g)||[]).length:0;
- document.getElementById("result").textContent=`Words: ${words} | Characters: ${v.length} | Sentences: ${sentences}`;
- });
- }
-}
-function closeTool(){document.getElementById("modal").classList.remove("show")}
-function transform(type){
- const el=document.getElementById("input");
- const v=el.value;
- let out="";
- try{
- if(type==="upper")out=v.toUpperCase();
- if(type==="lower")out=v.toLowerCase();
- if(type==="title")out=v.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
- if(type==="sentence")out=v.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g,c=>c.toUpperCase());
- if(type==="spaces")out=v.trim().replace(/\s+/g," ");
- if(type==="json")out=JSON.stringify(JSON.parse(v),null,2);
- if(type==="minify")out=JSON.stringify(JSON.parse(v));
- if(type==="encode")out=btoa(unescape(encodeURIComponent(v)));
- if(type==="decode")out=decodeURIComponent(escape(atob(v.trim())));
- if(type==="urlencode")out=encodeURIComponent(v);
- if(type==="urldecode")out=decodeURIComponent(v);
- if(type==="reverse")out=Array.from(v).reverse().join("");
- el.value=out;
- document.getElementById("result").textContent=type==="json"||type==="minify"?"Valid JSON!": "Done! Result is ready above.";
- }catch(e){document.getElementById("result").textContent="Invalid input. Please check your text and try again."}
-}
-function calculate(type){
- let result="";
- if(type==="percent"){
- const a=Number(document.getElementById("a").value);
- const b=Number(document.getElementById("b").value);
- if(document.getElementById("a").value===""||document.getElementById("b").value==="")result="Please enter both numbers.";
- else result=`Result: ${(a/100*b).toLocaleString()}`;
- }else{
- const v=document.getElementById("a").value;
- if(!v)result="Please select your birth date.";
- else{
- const birth=new Date(v+"T00:00:00");
- const today=new Date();
- if(birth>today)result="Birth date cannot be in the future.";
- else{
- let years=today.getFullYear()-birth.getFullYear();
- let months=today.getMonth()-birth.getMonth();
- let days=today.getDate()-birth.getDate();
- if(days<0){months--;days+=new Date(today.getFullYear(),today.getMonth(),0).getDate()}
- if(months<0){years--;months+=12}
- result=`Your age: ${years} years, ${months} months and ${days} days.`;
- }
- }
- }
- document.getElementById("result").textContent=result;
-}
-renderFilters();
-renderTools();
 </script>
+
 </body>
 </html>
