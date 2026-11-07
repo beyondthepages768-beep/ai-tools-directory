@@ -4,161 +4,611 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Tools Directory</title>
+
+<title>AI Tools Directory - Discover the Best AI Tools</title>
+
+<meta name="description" content="Discover the best AI tools online. Explore AI chatbots, image generators, video creators, writing assistants and productivity tools.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="AI Tools Directory">
+
+<link rel="canonical" href="https://ai-tools-directory-d37.pages.dev/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Tools Directory - Discover AI Tools">
+<meta property="og:description" content="Find the best AI tools for creativity, productivity, images, videos and more.">
+<meta property="og:url" content="https://ai-tools-directory-d37.pages.dev/">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI Tools Directory">
+<meta name="twitter:description" content="Discover the best AI tools online.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AI Tools Directory",
+  "url": "https://ai-tools-directory-d37.pages.dev/",
+  "description": "Discover AI tools for creativity and productivity."
+}
+</script>
+
 <style>
-* {box-sizing:border-box}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#0b1020;
-  color:white;
+  background: #090d19;
+  color: #f4f5ff;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
+
 header {
-  padding:22px 7%;
-  border-bottom:1px solid #252c40;
-  font-size:22px;
-  font-weight:bold;
+  height: 75px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #20283b;
+  background: #0d1222;
 }
-header span {color:#8b7cff}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #927cff;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: #b9bfd1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: white;
+}
+
 .hero {
-  text-align:center;
-  padding:75px 20px 45px;
+  text-align: center;
+  padding: 85px 20px 50px;
+  background:
+    radial-gradient(ellipse at top, #292052 0%, #090d19 65%);
 }
-.hero h1 {font-size:42px;margin-bottom:12px}
-.hero p {color:#a7b0c5}
-.search {
-  width:min(600px,90%);
-  padding:16px;
-  margin-top:20px;
-  border:1px solid #343b55;
-  border-radius:10px;
-  background:#171e32;
-  color:white;
-  font-size:16px;
+
+.hero .tag {
+  display: inline-block;
+  color: #c3b7ff;
+  border: 1px solid #51417d;
+  background: #20183c;
+  padding: 7px 15px;
+  border-radius: 30px;
+  font-size: 12px;
+  margin-bottom: 20px;
 }
+
+.hero h1 {
+  font-size: clamp(32px, 6vw, 52px);
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.hero h1 span {
+  color: #a28aff;
+}
+
+.hero p {
+  color: #aab2c7;
+  max-width: 620px;
+  margin: auto;
+  font-size: 16px;
+}
+
+.search-box {
+  max-width: 600px;
+  margin: 30px auto 0;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 18px 22px;
+  background: #151c30;
+  color: white;
+  border: 1px solid #353c56;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+}
+
+.search-box input:focus {
+  border-color: #967bff;
+}
+
 .categories {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:10px;
-  padding:20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 11px;
+  padding: 30px 15px;
 }
+
 .categories button {
-  background:#1b2340;
-  color:white;
-  border:1px solid #343b55;
-  padding:10px 18px;
-  border-radius:20px;
-  cursor:pointer;
+  background: #151c30;
+  color: #c4c9d9;
+  border: 1px solid #303951;
+  border-radius: 25px;
+  padding: 10px 19px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: .2s;
 }
-.categories button:hover {background:#6655d9}
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:20px;
-  padding:25px 7% 60px;
+
+.categories button:hover,
+.categories button.active {
+  background: #7154db;
+  color: white;
+  border-color: #7154db;
 }
-.card {
-  background:#151d32;
-  border:1px solid #29324b;
-  padding:22px;
-  border-radius:14px;
+
+.section-heading {
+  padding: 15px 7%;
 }
-.card h3 {margin:10px 0}
-.card p {color:#a7b0c5;line-height:1.5}
-.card a {
-  display:inline-block;
-  margin-top:12px;
-  color:#a99cff;
-  text-decoration:none;
-  font-weight:bold;
+
+.section-heading h2 {
+  font-size: 26px;
 }
+
+.section-heading p {
+  color: #929bb2;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  gap: 20px;
+  padding: 25px 7% 65px;
+}
+
+.tool-card {
+  background: #121a2b;
+  border: 1px solid #283249;
+  padding: 22px;
+  border-radius: 15px;
+  transition: .25s;
+  min-width: 0;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  border-color: #8067e8;
+  background: #171f34;
+}
+
+.tool-top {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 17px;
+}
+
+.tool-logo {
+  width: 49px;
+  height: 49px;
+  border-radius: 12px;
+  background: white;
+  padding: 7px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.tool-info {
+  min-width: 0;
+}
+
+.tool-info h3 {
+  font-size: 17px;
+  overflow-wrap: anywhere;
+}
+
+.tool-info span {
+  color: #a28aff;
+  font-size: 11px;
+}
+
+.tool-card p {
+  color: #aab2c5;
+  font-size: 13px;
+  min-height: 63px;
+}
+
+.visit-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #292044;
+  color: #c8baff;
+  border: 1px solid #54448c;
+  border-radius: 8px;
+  padding: 9px 14px;
+  margin-top: 18px;
+  font-size: 13px;
+  font-weight: bold;
+  transition: .2s;
+}
+
+.visit-btn:hover {
+  background: #7154db;
+  color: white;
+}
+
+.empty {
+  display: none;
+  text-align: center;
+  padding: 35px;
+  color: #aab2c5;
+}
+
+.about {
+  padding: 55px 8%;
+  background: #101729;
+  border-top: 1px solid #263047;
+}
+
+.about h2 {
+  font-size: 25px;
+  margin-bottom: 13px;
+}
+
+.about p {
+  color: #aab2c5;
+  max-width: 850px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
 footer {
-  text-align:center;
-  padding:25px;
-  color:#8992a8;
-  border-top:1px solid #252c40;
+  padding: 30px 15px;
+  text-align: center;
+  border-top: 1px solid #263047;
+  color: #929bb2;
+  font-size: 13px;
+}
+
+@media(max-width:650px) {
+  header {
+    height: auto;
+    padding: 18px 5%;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  nav {
+    gap: 18px;
+  }
+
+  .hero {
+    padding-top: 60px;
+  }
+
+  .tool-grid {
+    grid-template-columns: 1fr;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
 </style>
 </head>
+
 <body>
 
-<header>AI <span>Tools Directory</span></header>
+<header>
+  <div class="logo">AI <span>Tools Directory</span></div>
 
-<section class="hero">
-<h1>Discover the Best AI Tools</h1>
-<p>Explore powerful AI tools to work smarter and create more.</p>
-<input class="search" id="search"
-placeholder="Search AI tools..."
-oninput="filterTools()">
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#tools">Explore</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="tag">✦ Explore the world of AI</div>
+
+  <h1>Discover the Best <span>AI Tools</span></h1>
+
+  <p>
+    Find powerful AI tools for creativity, productivity,
+    learning, writing, image generation and video creation.
+    Everything you need in one place.
+  </p>
+
+  <div class="search-box">
+    <input
+      type="search"
+      id="searchInput"
+      placeholder="Search AI tools..."
+      aria-label="Search AI tools"
+    >
+  </div>
 </section>
 
-<div class="categories">
-<button onclick="filterCategory('All')">All</button>
-<button onclick="filterCategory('Chat')">Chat AI</button>
-<button onclick="filterCategory('Image')">Image AI</button>
-<button onclick="filterCategory('Video')">Video AI</button>
-<button onclick="filterCategory('Productivity')">Productivity</button>
-</div>
+<section class="categories" aria-label="AI tool categories">
+  <button class="active" data-category="All">All Tools</button>
+  <button data-category="Chat">Chat AI</button>
+  <button data-category="Image">Image AI</button>
+  <button data-category="Video">Video AI</button>
+  <button data-category="Writing">Writing AI</button>
+  <button data-category="Productivity">Productivity</button>
+</section>
 
-<main class="grid" id="tools">
+<section id="tools">
+  <div class="section-heading">
+    <h2>Explore AI Tools</h2>
+    <p>Discover useful AI platforms from around the web.</p>
+  </div>
 
-<div class="card" data-category="Chat">
-<h3>ChatGPT</h3>
-<p>AI assistant for writing, learning and brainstorming.</p>
-<a href="https://chatgpt.com/" target="_blank">Visit Website →</a>
-</div>
+  <div class="tool-grid" id="toolGrid">
 
-<div class="card" data-category="Chat">
-<h3>Claude</h3>
-<p>AI assistant for writing, analysis and coding.</p>
-<a href="https://claude.ai/" target="_blank">Visit Website →</a>
-</div>
+    <!-- CHAT AI -->
 
-<div class="card" data-category="Chat">
-<h3>Gemini</h3>
-<p>Google's AI assistant for everyday tasks.</p>
-<a href="https://gemini.google.com/" target="_blank">Visit Website →</a>
-</div>
+    <article class="tool-card" data-category="Chat">
+      <div class="tool-top">
+        <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128" alt="ChatGPT logo">
+        <div class="tool-info">
+          <h3>ChatGPT</h3>
+          <span>Chat AI</span>
+        </div>
+      </div>
+      <p>AI assistant for writing, learning, brainstorming and everyday tasks.</p>
+      <a class="visit-btn" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Visit Website ↗</a>
+    </article>
 
-<div class="card" data-category="Image">
-<h3>Leonardo AI</h3>
-<p>Create images and artwork using AI.</p>
-<a href="https://leonardo.ai/" target="_blank">Visit Website →</a>
-</div>
+    <article class="tool-card" data-category="Chat">
+      <div class="tool-top">
+        <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=claude.ai&sz=128" alt="Claude logo">
+        <div class="tool-info">
+          <h3>Claude</h3>
+          <span>Chat AI</span>
+        </div>
+      </div>
+      <p>AI assistant for writing, coding, research and complex tasks.</p>
+      <a class="visit-btn" href="https://claude.ai/" target="_blank" rel="noopener noreferrer">Visit Website ↗</a>
+    </article>
 
-<div class="card" data-category="Video">
-<h3>Runway</h3>
-<p>Explore AI-powered video creation tools.</p>
-<a href="https://runwayml.com/" target="_blank">Visit Website →</a>
-</div>
+    <article class="tool-card" data-category="Chat">
+      <div class="tool-top">
+        <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=128" alt="Gemini logo">
+        <div class="tool-info">
+          <h3>Google Gemini</h3>
+          <span>Chat AI</span>
+        </div>
+      </div>
+      <p>Google AI assistant for questions, ideas and productivity.</p>
+      <a class="visit-btn" href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">Visit Website ↗</a>
+    </article>
 
-<div class="card" data-category="Productivity">
-<h3>Notion AI</h3>
-<p>AI features for notes and productivity.</p>
-<a href="https://www.notion.com/" target="_blank">Visit Website →</a>
-</div>
+    <article class="tool-card" data-category="Chat">
+      <div class="tool-top">
+        <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=copilot.microsoft.com&sz=128" alt="Copilot logo">
+        <div class="tool-info">
+          <h3>Microsoft Copilot</h3>
+          <span>Chat AI</span>
+        </div>
+      </div>
+      <p>AI assistant for research, creative tasks and everyday questions.</p>
+      <a class="visit-btn" href="https://copilot.microsoft.com/" target="_blank" rel="noopener noreferrer">Visit Website ↗</a>
+    </article>
+
+    <!-- IMAGE AI -->
+
+    <article class="tool-card" data-category="Image">
+      <div class="tool-top">
+        <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=leonardo.ai&sz=128" alt="Leonardo AI logo">
+        <div class="tool-info">
+          <h3>Leonardo AI</h3>
+          <span>Image AI</span>
+        </div>
+      </div>
+      <p>Create AI-generated artwork, images and creative designs.</p>
+      <a class="visit-btn" href="https://leonardo.ai/" target="_blank" rel="noopener noreferrer">Visit Website ↗</a>
+    </article>
+
+    <article class="tool-card" data-category="Image">
+      <div class="tool-top">
+        <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=ideogram.ai&sz=128" alt="Ideogram logo">
+        <div class="tool-info">
+          <h3>Ideogram</h3>
+          <span>Image AI</span>
+        </div>
+      </div>
+      <p>Generate creative images, illustrations and graphic designs.</p>
+      <a class="visit-btn" href="https://ideogram.ai/" target="_blank" rel="noopener noreferrer">Visit Website ↗</a>
+    </article>
+
+    <article class="tool-card" data-category="Image">
+      <div class="tool-top">
+        <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=128" alt="Adobe Firefly logo">
+        <div class="tool-info">
+          <h3>Adobe Firefly</h3>
+          <span>Image AI</span>
+        </div>
+      </div>
+      <p>Explore generative AI features for creative image editing.</p>
+      <a class="visit-btn" href="https://firefly.adobe.com/" target="_blank" rel="noopener noreferrer">Visit Website ↗</a>
+    </article>
+
+    <!-- VIDEO AI -->
+
+    <article class="tool-card" data-category="Video">
+      <div class="tool-top">
+        <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=runwayml.com&sz=128" alt="Runway logo">
+        <div class="tool-info">
+          <h3>Runway</h3>
+          <span>Video AI</span>
+        </div>
+      </div>
+      <p>Explore AI-powered video generation and creative tools.</p>
+      <a class="visit-btn" href="https://runwayml.com/" target="_blank" rel="noopener noreferrer">Visit Website ↗</a>
+    </article>
+
+    <article class="tool-card" data-category="Video">
+      <div class="tool-top">
+        <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=pika.art&sz=128" alt="Pika logo">
+        <div class="tool-info">
+          <h3>Pika</h3>
+          <span>Video AI</span>
+        </div>
+      </div>
+      <p>Create and experiment with AI-generated videos.</p>
+      <a class="visit-btn" href="https://pika.art/" target="_blank" rel="noopener noreferrer">Visit Website ↗</a>
+    </article>
+
+    <article class="tool-card" data-category="Video">
+      <div class="tool-top">
+        <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=heygen.com&sz=128" alt="HeyGen logo">
+        <div class="tool-info">
+          <h3>HeyGen</h3>
+          <span>Video AI</span>
+        </div>
+      </div>
+      <p>Create AI avatar videos and professional video presentations.</p>
+      <a class="visit-btn" href="https://www.heygen.com/" target="_blank" rel="noopener noreferrer">Visit Website ↗</a>
+    </article>
+
+    <!-- WRITING AI -->
+
+    <article class="tool-card" data-category="Writing">
+      <div class="tool-top">
+        <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=grammarly.com&sz=128" alt="Grammarly logo">
+        <div class="tool-info">
+          <h3>Grammarly</h3>
+          <span>Writing AI</span>
+        </div>
+      </div>
+      <p>Improve writing clarity, grammar and communication.</p>
+      <a class="visit-btn" href="https://www.grammarly.com/" target="_blank" rel="noopener noreferrer">Visit Website ↗</a>
+    </article>
+
+    <article class="tool-card" data-category="Writing">
+      <div class="tool-top">
+        <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=quillbot.com&sz=128" alt="QuillBot logo">
+        <div class="tool-info">
+          <h3>QuillBot</h3>
+          <span>Writing AI</span>
+        </div>
+      </div>
+      <p>Writing assistance, paraphrasing and summarization tools.</p>
+      <a class="visit-btn" href="https://quillbot.com/" target="_blank" rel="noopener noreferrer">Visit Website ↗</a>
+    </article>
+
+    <!-- PRODUCTIVITY -->
+
+    <article class="tool-card" data-category="Productivity">
+      <div class="tool-top">
+        <img class="tool-logo" src="https://www.google.com/s2/favicons?domain=notion.com&sz=128" alt="Notion logo">
+        <div class="tool-info">
+          <h3>Notion AI</h3>
+          <span>Productivity</span>
+        </div>
+      </div>
+      <p>AI features for notes, documents and productivity.</p>
+      <a class="visit-btn" href="https://www.notion.com/" target="_blank" rel="noopener noreferrer">Visit Website ↗</a>
+    </article>
+
+  </div>
+
+  <div class="empty" id="emptyMessage">
+    No tools found. Try another search.
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2>About AI Tools Directory</h2>
+
+  <p>
+    AI Tools Directory helps you discover useful artificial
+    intelligence platforms from across the internet.
+    Explore tools for chat, image generation, video creation,
+    writing and productivity in one convenient place.
+  </p>
+
+  <h2>Find the Right AI Tool</h2>
+
+  <p>
+    Whether you are a student, creator, designer or professional,
+    discover AI platforms that can help you work smarter,
+    explore new ideas and improve your creative workflow.
+    Visit each platform's official website to learn more
+    about its features and available plans.
+  </p>
+</section>
 
 </main>
 
-<footer>© 2026 AI Tools Directory</footer>
+<footer>
+  <p>© 2026 AI Tools Directory. All rights reserved.</p>
+  <p>Discover. Explore. Create.</p>
+</footer>
 
 <script>
-let category = "All";
+const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".tool-card");
+const categoryButtons = document.querySelectorAll(".categories button");
+const emptyMessage = document.getElementById("emptyMessage");
+
+let selectedCategory = "All";
 
 function filterTools() {
-  const search = document.getElementById("search").value.toLowerCase();
-  document.querySelectorAll(".card").forEach(card => {
-    const matchesSearch = card.innerText.toLowerCase().includes(search);
-    const matchesCategory = category === "All" || card.dataset.category === category;
-    card.style.display = matchesSearch && matchesCategory ? "" : "none";
+  const searchTerm = searchInput.value.toLowerCase();
+  let visibleCount = 0;
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    const category = card.dataset.category;
+
+    const matchesSearch = text.includes(searchTerm);
+    const matchesCategory =
+      selectedCategory === "All" ||
+      category === selectedCategory;
+
+    const visible = matchesSearch && matchesCategory;
+
+    card.style.display = visible ? "" : "none";
+
+    if (visible) visibleCount++;
   });
+
+  emptyMessage.style.display =
+    visibleCount === 0 ? "block" : "none";
 }
 
-function filterCategory(value) {
-  category = value;
-  filterTools();
-}
+searchInput.addEventListener("input", filterTools);
+
+categoryButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    categoryButtons.forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+    selectedCategory = button.dataset.category;
+
+    filterTools();
+  });
+});
 </script>
 
 </body>
