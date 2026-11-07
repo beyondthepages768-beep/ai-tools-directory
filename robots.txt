@@ -5,4 +5,3 @@ Disallow: /search/label/
 Allow: /
 
 Sitemap: https://ai-tools-directory-d37.pages.dev/sitemap.xml
-Sitemap: https://ai-tools-directory-d37.pages.dev/sitemap-pages.xml
